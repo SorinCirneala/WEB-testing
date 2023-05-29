@@ -5,11 +5,14 @@ from selenium import webdriver
 def driver():
     driver = webdriver.Chrome()
     
-    # Set up any additional configuration for the driver
-    
+    # set up the driver
+    print("Preparing driver")
+
+    # init driver
     yield driver
     
-    # Teardown - quit the driver and clean up any resources
+    # teardown - quit the driver and clean up any resources
+    print("Closing driver")
     driver.quit()
 
 @pytest.fixture(scope="function")
