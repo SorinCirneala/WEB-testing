@@ -6,7 +6,7 @@ class BasePage:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
 
-    def open(self, url):
+    def load_page(self, url):
         self.driver.get(url)
 
     def find_element(self, locator):
