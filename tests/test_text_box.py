@@ -1,16 +1,19 @@
-
+import sys, os
+project_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_path)
 
 import pytest
 from time import sleep
-from pages.textbox_page import TextboxPage, TEXTBOX_URL
-# from utils.config import BASE_URL
+from pages.textbox_page import TextboxPage, TB_URL
 
 @pytest.mark.usefixtures("driver", "login")
+@pytest.mark.smoke
 class TestTextbox:
     def test_sumbit_fullname(self, driver):
         page = TextboxPage(driver)
-        page.open(TEXTBOX_URL)
+        page.open(TB_URL)
         page.enter_full_name("John Connor")
+        page.enter_email
         sleep(3)
 
 
