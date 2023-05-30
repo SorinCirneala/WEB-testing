@@ -9,7 +9,10 @@ class TestTextbox:
         driver = TextboxPage(driver)
         driver.load_page()
         driver.enter_full_name("John Connor")
-        sleep(3)
+        sleep(1)
+        driver.click_submit()
+        sleep(2)
+        assert driver.get_element_text() == "Name:John Connor"
     
     
     @pytest.mark.usefixtures("driver")
