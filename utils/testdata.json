@@ -1,0 +1,9 @@
+[
+    {
+        "tc_name": "test_sumbit_fullname",
+        "inputs": [
+                "Sean Connery", 
+                "Allan Alda"
+            ]
+    }
+]
