@@ -13,7 +13,7 @@ class TBloc():
     SUBMIT_BTN = (By.ID, "submit")
     NAME_LBL = (By.ID, "name")
     EMAIL_LBL = (By.ID, "email")
-    CRNT_ADDRESS_LBL = (By.CSS_SELECTOR, "p.mb-1") # ID is not unique
+    CRNT_ADDRESS_LBL = (By.CSS_SELECTOR, 'p.mb-1[id*="currentAddress"]') # ID is not unique
     PERM_ADDRESS_LBL = (By.ID, "permanentAddress")
 
 class TextboxPage(BasePage):
