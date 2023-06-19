@@ -11,5 +11,5 @@ Selenium:
 pytest:
 - fixtures
 - marking tests with atributes
+- parameterized test cases
 - skip test cases
-- parameterized test cases (TBD)

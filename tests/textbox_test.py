@@ -24,3 +24,11 @@ class TestTextbox:
         assert page.get_element_text(TBloc.EMAIL_LBL) == "Email:sarah.connor@gmail.com"
 
     # @pytest.mark.skip(reason="in progress")
+    @pytest.mark.usefixtures("driver")
+    @pytest.mark.smoke
+    def test_sumbit_current_address(self, driver):
+        page = TextboxPage(driver)
+        page.load_page()
+        page.enter_crnt_address("4660, Great American Parkway, Santa Clara, CA")
+        page.click_submit()
+        assert page.get_element_text(TBloc.CRNT_ADDRESS_LBL) == "Current Address :4660, Great American Parkway, Santa Clara, CA"

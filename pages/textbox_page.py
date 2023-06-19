@@ -13,7 +13,7 @@ class TBloc():
     SUBMIT_BTN = (By.ID, "submit")
     NAME_LBL = (By.ID, "name")
     EMAIL_LBL = (By.ID, "email")
-    CRNT_ADDRESS_LBL = (By.ID, "currentAddress")
+    CRNT_ADDRESS_LBL = (By.CSS_SELECTOR, "p.mb-1") # ID is not unique
     PERM_ADDRESS_LBL = (By.ID, "permanentAddress")
 
 class TextboxPage(BasePage):
@@ -41,13 +41,3 @@ class TextboxPage(BasePage):
 
     def click_submit(self):
         self.click_element(TBloc.SUBMIT_BTN)
-
-
-    def get_name_output(self):
-        name_elem = self.find_element(TBloc.NAME_LBL)
-        return name_elem.text
-
-
-    def get_email_output(self):
-        email_elem = self.find_element(TBloc.NAME_LBL)
-        return email_elem.text
